@@ -450,22 +450,21 @@
 //     })
 // console.log(a)
 
-let num = '10,20,30'
+// let num = '10,20,30'
 
-let arr=num.split(',');
-arr.forEach(element => {
-    console.log(element);
+// let arr=num.split(',');
+// arr.forEach(element => {
+//     console.log(element);
     
-});
+// });
 
 // display the arry with fully split in each line 
 
 // we can look up for array with the simple log code
 
-console.log(arr);
+// console.log(arr);
 
 // so if we want to join it back the here is the simple code
 
-let jo = arr.join(",")
-console.log(jo);
-
+// let jo = arr.join(",")
+// console.log(jo);
