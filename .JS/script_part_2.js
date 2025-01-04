@@ -28,12 +28,12 @@
 
 // Multideminsion array
 
-let arr =[
+/* let arr =[
     ["John",30],
     ["Thomas",38],
     ["Robert",40]
 ]
-
+ */
 /* console.log(arr);
 //  if i want to print only thomas then 
 
@@ -94,10 +94,93 @@ this is the example of for each */
   */
 
     // array destructuring
-    let array=["Thomas","chad"]
-    let item1=array1[0];
-    let item2=array1[1];
+   /*  let array1=["Thomas","chad","Neo","Magnus"]
+    let [item1,item2,...item3]=array1;
 
     console.log(item1);
     console.log(item2);
+    console.log(item3); */
     
+
+    //***objects */
+
+
+  /*   let obj ={
+        name:"Bravo",
+        age:32,
+        "last name":"John", 
+        //  we need to double collon here because there is a space in the name
+        
+        fun:function(){
+            console.log("i am function"); 
+            // function in an object
+
+        },
+        arr:[20,30,40,]
+    }   */
+    /* console.log(obj["last name"]);
+    obj.fun();
+    console.log(obj.arr);
+     */
+    /* let a="key2";
+    obj.key="item"
+    obj[a]="item2" */
+    /* 
+    console.log(obj);
+     */
+    // to print all the value of object we use for in loop 
+
+   /*  for( i in obj){
+        console.log(obj[i]);
+        
+    } */
+    // we have show this using for in loop 
+
+    /* for ( let i of Object.keys(obj)){
+        console.log(obj[i]);
+        
+    } */
+
+    // this is using for of loop
+
+    // *****************objects inside array
+
+    /* let arr=[
+        {user:1,name:"tate"},
+        {user:2,name:"anderson"},
+        {user:3,name:"bravo"}
+
+    ]
+    console.log("this is for the for in loop");
+    for (let i in arr){
+        console.log(arr[i]);
+        
+    }    
+    console.log("this is for the for of loop");
+    
+    for( let i of arr){
+        console.log(i.name);
+        
+    }
+
+    //  now destructuring 
+    console.log("now this is for the destructuring part");
+
+    let [{name}, ,{name:name2}]= arr; 
+    // we need to change the name to name2 using colon because name is aleady taken for the item1
+    console.log(name);
+    console.log(name2); */
+     
+
+// ****************functions inside funstion
+
+
+/* function fun(){
+    console.log("i am function 1");
+    function fun2(){
+        console.log("i am function2");
+        
+    }
+    fun2();
+}    
+fun(); */
