@@ -184,3 +184,75 @@ this is the example of for each */
     fun2();
 }    
 fun(); */
+
+// *******LEXICAL SCOPE
+
+/* function fun(){
+    var a=1;
+    console.log("i am function ;"+ a);
+    function fun2(){
+        var a=2
+        console.log("i am function ;"+ a);
+        
+    }
+    fun2();
+}
+
+fun(); */
+
+// lexical scope always search for values only upwards not downwards
+
+// ***********Debugger
+
+/*  function fun (){
+    debugger;
+    for(let i=0;i<5;i++){
+        console.log(i);
+    }
+ }
+
+fun();
+ */
+
+// ******sets
+/* 
+const arr=[10,20,30,40,50,30];
+console.log(arr);
+console.log(arr.length);
+
+
+const s=new Set([10,20,30,40,50,30]);
+s.add(6)
+s.add("hello")
+console.log(s);
+
+let length=0;
+for(let element of s){
+    length++;
+}
+
+console.log(length);
+ */
+// set is similar to array but it does not show repeated values
+// always show unique values 
+
+// *******maps
+
+var map1= new Map([[1,"one"],
+["fname","mickey"],
+["whole number",[0,1,2,3,4]]])
+console.log(map1.get("fname"));
+
+var k= map1.keys();
+for(var key of k){
+    console.log(key);
+    
+}
+
+console.log(map1);
+
+console.log("this is for map2");
+
+var map2=new Map();
+map2.set("fname","mouse")
+console.log(map2);
