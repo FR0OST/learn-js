@@ -256,3 +256,4 @@ console.log("this is for map2");
 var map2=new Map();
 map2.set("fname","mouse")
 console.log(map2);
+
