@@ -93,4 +93,178 @@ function printNumberRecusion(n){
 }
 
 printNumberRecusion(1); */
+/* 
+function fact (n){
+    if (n==0){
+        return 1;
+    }
+    else{
+        return n*fact(n-1);
+    }
+}
 
+console.log(fact(5));
+ */
+
+// ****Asychronous and synchronous and set timeout
+/* 
+console.log("this is");
+setTimeout(() => {
+    console.log("asynchronous");
+}, 4000);
+
+setTimeout(fun,3000)
+
+function fun(){
+    console.log("and this is");
+    
+}
+
+
+console.log("synchronous"); */
+
+// the code will run in a sequence one the 1st code execute
+// and finish then next code execute
+// and for asynchronous we have to set out
+
+// ****callback
+/* 
+function fun(val){
+    console.log(val);
+    
+}
+
+function add(a,b,callbk){
+    let sum=a+b;
+    callbk(sum)
+}
+
+add(5,10,fun)
+ */
+
+// ****callback hell
+/* 
+function loadingdata(callback){
+    setTimeout(()=>{
+        console.log("1) loading data....");
+        callback();
+    },2000)
+    
+    
+}
+function connectingdata(callback){
+    setTimeout(()=>{
+    console.log("2) collecting data...");
+        callback();
+},2000)
+   
+    
+}
+function approvingdata(callback){
+    setTimeout(()=>{
+        console.log("3) approvingdata...");
+        callback();
+    },2000)
+    
+    
+}
+function approved(){
+    setTimeout(()=>{
+        console.log("4) approved...");
+    },2000)
+    
+    
+}
+// this is callback hell 
+loadingdata(function(){
+    connectingdata(function(){
+        approvingdata(function (){
+            approved();
+        });
+        
+    });
+    
+});
+ */
+//**** promise
+/* 
+function fun(task){
+    return new Promise((resolve,reject)=>{
+        if(task){
+            resolve("completed");
+        }
+        else {
+            reject("rejected");
+        };
+    })
+
+}
+
+let onResolve=(res)=>{
+    console.log(res);
+    
+}
+
+let onReject=(rej)=>{
+    console.log(rej);
+    
+}
+
+fun(true).then(onResolve).catch(onReject); */
+
+// now we will apply promise function in the above program of callback hell
+
+function loadingdata(){
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            console.log("1) loading data....");
+            resolve();
+        },1000)
+        
+    })
+    
+}
+function connectingdata(){
+    return new Promise ((resolve,reject)=>{
+        setTimeout(()=>{
+            console.log("2) collecting data...");
+            resolve();
+        },1000)
+    })
+    
+   
+    
+}
+function approvingdata(){
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            console.log("3) approvingdata...");
+            reject("Not fulfilled");
+        },1000)
+        
+    })
+    
+    
+}
+function approved(){
+        setTimeout(()=>{
+            console.log("4) approved...");
+        },1000)
+        
+    }
+// this is callback hell 
+/* loadingdata(function(){
+    connectingdata(function(){
+        approvingdata(function (){
+            approved();
+        });
+        
+    });
+    
+}); */
+
+loadingdata().then(connectingdata).then(approvingdata).then(approved)
+.catch((err)=>{
+    console.log(err);
+    
+})
