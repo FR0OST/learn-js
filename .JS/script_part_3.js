@@ -213,7 +213,7 @@ let onReject=(rej)=>{
 fun(true).then(onResolve).catch(onReject); */
 
 // now we will apply promise function in the above program of callback hell
-
+/* 
 function loadingdata(){
     return new Promise((resolve,reject)=>{
         setTimeout(()=>{
@@ -252,19 +252,105 @@ function approved(){
         },1000)
         
     }
-// this is callback hell 
-/* loadingdata(function(){
-    connectingdata(function(){
-        approvingdata(function (){
-            approved();
-        });
-        
-    });
-    
-}); */
 
 loadingdata().then(connectingdata).then(approvingdata).then(approved)
 .catch((err)=>{
     console.log(err);
     
-})
+}) */
+
+// ****Async await
+
+/* 
+function loadingdata(){
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            console.log("1) loading data....");
+            resolve();
+        },1000)
+        
+    })
+    
+}
+function connectingdata(){
+    return new Promise ((resolve,reject)=>{
+        setTimeout(()=>{
+            console.log("2) collecting data...");
+            resolve();
+        },1000)
+    })
+    
+   
+    
+}
+function approvingdata(){
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            console.log("3) approvingdata...");
+            reject("Not fulfilled");
+        },1000)
+        
+    })
+    
+    
+}
+function approved(){
+        setTimeout(()=>{
+            console.log("4) approved...");
+        },1000)
+        
+    }
+
+
+async function ex (){
+    await loadingdata();
+    await connectingdata();
+    await approvingdata();
+    await approved();
+
+}
+
+ex().catch((err)=>{
+    console.log(err);
+    
+});
+
+ */
+
+// setinterval
+
+/* 
+var inter = setInterval(fun,1000);
+
+function fun(){
+let date= new Date().toLocaleTimeString();
+console.log(date);
+
+}
+
+setTimeout(()=>{
+    clearInterval(inter);
+    },20000) */
+
+// ****
+
+function fun(age,gender){
+    console.log(this.fname,age,gender);
+}
+
+var obj1={
+    fname:"John",
+}
+
+var obj2={
+    fname:"kenny"
+}
+
+fun.call(obj1,12,"male"); 
+
+fun.apply(obj1,[12,"male"]);
+
+var a= fun.bind(obj1,[12,"male"]);
+console.log(a);
+
+console.log(typeof a);
