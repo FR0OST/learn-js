@@ -354,3 +354,4 @@ var a= fun.bind(obj1,[12,"male"]);
 console.log(a);
 
 console.log(typeof a);
+
