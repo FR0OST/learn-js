@@ -5,12 +5,12 @@ console.log(a);
  */
 
 // Get element by ClassName
-
+/* 
 var a = document.getElementsByClassName('hero');
 console.log(a);
-
+ */
 
 // getElement by Id
 
-var a = document.getElementById('zero');
+var a=document.getElementById('#"+demo.Id+"');
 console.log(a);
